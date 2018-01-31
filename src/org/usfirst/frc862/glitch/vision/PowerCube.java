@@ -10,8 +10,7 @@ package org.usfirst.frc862.glitch.vision;
 public class PowerCube {
 	private final int COLLECTOR_PIXELS_OFF_CENTER = 0;
 	private final double DEGREES_PER_PIXEL = .1846590;
-	private final int FRAMES_SINCE_CONTACT_CUTOFF = 40;
-	private int x, y, framesSinceContact;
+	private int x, y;
 	private double angle, area;
 	
 	/**
@@ -26,32 +25,7 @@ public class PowerCube {
 		this.y = y;
 		this.angle = (x - 176 - COLLECTOR_PIXELS_OFF_CENTER) * DEGREES_PER_PIXEL;
 		this.area = width * height;
-		framesSinceContact = 0;
 		
-	}
-	
-	public void updateCube(int x, int y, int width, int height) {
-		this.x = x;
-		this.y = y;
-		this.angle = (x - 176 - COLLECTOR_PIXELS_OFF_CENTER) * DEGREES_PER_PIXEL;
-		this.area = width * height;
-		framesSinceContact = 0;
-		
-	}
-	
-	/**
-	 * Increments the contact timer by one frame
-	 */
-	public void incrementContactTimer() {
-		framesSinceContact++;
-	}
-	
-	/**
-	 * Check whether a cube has been out of contact for longer than the cutoff
-	 * @return boolean beyondContactLimit
-	 */
-	public boolean beyondContactCutoff() {
-		return framesSinceContact > FRAMES_SINCE_CONTACT_CUTOFF;
 	}
 
 	/**

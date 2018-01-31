@@ -11,7 +11,10 @@
 
 package org.usfirst.frc862.glitch.commands;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 import org.usfirst.frc862.glitch.Robot;
+import org.usfirst.frc862.glitch.vision.CubeNotFoundException;
 
 /**
  *
@@ -43,6 +46,16 @@ public class ProcessVision extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
+    	double[] out = {0.0, 0.0};
+    	try {
+    		out = Robot.cubeVision.getBestCube();
+    	}
+    	catch(CubeNotFoundException e) {
+    		out[0] = 0.0;
+    		out[1] = 0.0;
+    	}
+    	SmartDashboard.putNumber("Smallest angle", out[0]);
+    	SmartDashboard.putNumber("Cube area", out[1]);
     }
 
     // Make this return true when this Command no longer needs to run execute()
