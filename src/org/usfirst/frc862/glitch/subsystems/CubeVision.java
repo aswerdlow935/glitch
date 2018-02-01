@@ -49,6 +49,7 @@ public class CubeVision extends Subsystem {
 		cubes = new ArrayList();
 		serialIn = new SerialPort(115200, SerialPort.Port.kUSB);
 		serialIn.writeString("streamon\n");
+		serialIn.enableTermination();
 		framesSinceContact = 0;
 		
 	}
