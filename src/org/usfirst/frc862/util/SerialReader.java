@@ -5,7 +5,7 @@ import edu.wpi.first.wpilibj.SerialPort;
 import java.io.IOException;
 import java.io.Reader;
 
-class SerialReader extends Reader {
+public class SerialReader extends Reader {
     private SerialPort port;
 
     public SerialReader(SerialPort port) {
