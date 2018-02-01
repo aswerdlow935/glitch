@@ -50,9 +50,10 @@ public class ProcessVision extends Command {
     	try {
     		out = Robot.cubeVision.getBestCube();
     	}
-    	catch(CubeNotFoundException e) {
+    	catch(Exception e) {
     		out[0] = 0.0;
     		out[1] = 0.0;
+    		SmartDashboard.putString("error", e.getClass().getCanonicalName());
     	}
     	SmartDashboard.putNumber("Smallest angle", out[0]);
     	SmartDashboard.putNumber("Cube area", out[1]);
