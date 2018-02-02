@@ -45,7 +45,6 @@ public class WaitForCube extends Command {
     @Override
     protected void execute() {
         if(Robot.gripper.hasCube()){
-            Robot.gripper.startWaitWithCube();
         }
 
     }

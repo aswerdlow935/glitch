@@ -132,6 +132,11 @@ public class Constants extends ConstantsBase {
     public static double StraightenKpLowGear = 0; // -0.005;
     public static double StraightenKpHighGear = 0; // -0.01;
     public static double slowDownRate = 0.95;
+    
+    
+    // Vision
+	public static int COLLECTOR_PIXELS_OFF_CENTER = 0;
+	public static int VISION_ABORT_THRESHOLD = 100000; //If a cube hasn't been seen for this many frames, stop sending the last good frame and send an abort message
 
 
     public String getFileName() {

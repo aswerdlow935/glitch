@@ -1,5 +1,7 @@
 package org.usfirst.frc862.glitch.vision;
 
+import org.usfirst.frc862.glitch.Constants;
+
 /**
  * 
  * @author Ethan Pelkie, Darren Tas
@@ -8,7 +10,6 @@ package org.usfirst.frc862.glitch.vision;
  *
  */
 public class PowerCube {
-	private final int COLLECTOR_PIXELS_OFF_CENTER = 0;
 	private final double DEGREES_PER_PIXEL = .1846590;
 	private int x, y;
 	private double angle, area;
@@ -23,7 +24,7 @@ public class PowerCube {
 	public PowerCube(int x, int y, int width, int height) {
 		this.x = x;
 		this.y = y;
-		this.angle = (x - 176 - COLLECTOR_PIXELS_OFF_CENTER) * DEGREES_PER_PIXEL;
+		this.angle = (x - 176 - Constants.COLLECTOR_PIXELS_OFF_CENTER) * DEGREES_PER_PIXEL;
 		this.area = width * height;
 		
 	}
