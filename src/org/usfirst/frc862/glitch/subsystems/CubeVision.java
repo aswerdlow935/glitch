@@ -107,7 +107,7 @@ public class CubeVision extends Subsystem {
 	    			h = Integer.parseInt(currentCube.substring(currentCube.indexOf("h:") + 2, currentCube.indexOf("]", currentCube.indexOf("h:"))));
 	    	    	SmartDashboard.putString("step", "xywh");
 	    			
-	    			cubes.add(new PowerCube(x, y, w, h));
+	    			if(!(w / h >= 2.2 || h / w >= 2.2 || w >= 320 || h >= 250 || (w * h) >= 40000)) cubes.add(new PowerCube(x, y, w, h));
 	    			SmartDashboard.putNumber("cubes.size()", cubes.size());
 	    	    	SmartDashboard.putString("step", "push");
 	    		}
